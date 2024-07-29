@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from "react";
-import { memo, useState } from "react";
+import { memo, useLayoutEffect, useState } from "react";
 import { PosterController } from "Controllers";
 import { useClassNames, useController } from "Hooks";
 import type { OptionalChildren, RotationCallback } from "./types";
@@ -26,6 +26,12 @@ export const Poster = memo(function Poster({
   const controller = useController(
     new PosterController<HTMLDivElement>(setAnimations, onRotation),
   );
+
+  useLayoutEffect(() => {
+    return () => {
+      controller.clear();
+    };
+  }, [controller]);
 
   return (
     <div

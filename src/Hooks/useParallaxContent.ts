@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import { ParallaxController } from "Controllers";
 import { useController } from "./useController";
 
@@ -13,6 +13,13 @@ export const useParallaxContent = (): [
     transition: "0.2s",
   });
   const controller = useController(new ParallaxController(setAnimation));
+
+  useLayoutEffect(() => {
+    return () => {
+      controller.clear();
+    };
+  }, [controller]);
+
   return useMemo(
     () => [
       controller.onRotation,
