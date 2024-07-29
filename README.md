@@ -1,7 +1,7 @@
 # Apple TV Poster
 An easy to use Apple TV-like parallax poster for the Web and React.
 
-![Poster Animation](media/poster.gif "Poster Animation")
+<video controls src='media/posters.mov' width="100%"></video>
 
 ## Installation
 ```bash
@@ -72,7 +72,7 @@ export const MyParallaxPoster = () => {
 ```
 Now your poster content will transition along with your poster's rotation - creating a cool parallax effect!
 
-![Parallax Poster Animation](media/parallax-poster.gif "Parallax Poster Animation")
+<video controls src='media/parallax-poster.mov' width="100%"></video>
 
 
 ## Parallex Poster Content - `useParallaxContent()`
@@ -102,4 +102,4 @@ export const MyParallaxPoster = () => {
 ```
 This hook handles the interpolation of rotation values for your content and smooths animations when mousing in and out of your posters
 
-![Parallax Poster Animation](media/parallax-poster.gif "Parallax Poster Animation")
+<video controls src='media/parallex-poster.mov' width="100%"></video>
