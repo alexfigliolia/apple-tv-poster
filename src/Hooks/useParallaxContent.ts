@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { useMemo, useState } from "react";
-import { ParallaxController } from "../Controllers";
+import { ParallaxController } from "Controllers";
 import { useController } from "./useController";
 
 export const useParallaxContent = (): [

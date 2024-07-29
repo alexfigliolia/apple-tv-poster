@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
 import { memo, useState } from "react";
-import { PosterController } from "./Controllers";
-import { useClassNames, useController } from "./Hooks";
+import { PosterController } from "Controllers";
+import { useClassNames, useController } from "Hooks";
 import type { OptionalChildren, RotationCallback } from "./types";
 import "./styles.css";
 

@@ -7,26 +7,34 @@
     }
   },
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2015",
     "lib": [
-      "DOM",
-      "ESNext"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "module": "ES2022",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
     "allowJs": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "Controllers/*": [
+        "./Controllers/*"
+      ],
+      "Hooks/*": [
+        "./Hooks/*"
+      ],
+    }
   },
   "include": [
     "src",
