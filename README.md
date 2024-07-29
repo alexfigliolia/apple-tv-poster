@@ -75,7 +75,7 @@ Now your poster content will transition along with your poster's rotation - crea
 <video controls src='media/parallax-poster.mp4' width="100%"></video>
 
 
-## Parallex Poster Content - `useParallaxContent()`
+## Parallax Poster Content - `useParallaxContent()`
 To simplify creating parallax poster content, this library exports a `useParallaxContent()` hook. The hook returns an `onRotation` function for your `Poster` and a `style` object to pass to your poster's children.
 ```tsx
 import { Poster, useParallaxContent } from "@figliolia/apple-tv-poster";
@@ -102,4 +102,4 @@ export const MyParallaxPoster = () => {
 ```
 This hook handles the interpolation of rotation values for your content and smooths animations when mousing in and out of your posters
 
-<video controls src='media/parallex-poster.mp4' width="100%"></video>
+<video controls src='media/parallax-poster.mp4' width="100%"></video>
