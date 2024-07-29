@@ -19,6 +19,17 @@
     "defaults",
     "not dead"
   ],
+  "homepage": "https://github.com/alexfigliolia/apple-tv-poster#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfigliolia/apple-tv-poster.git"
+  },
+  "keywords": [
+    "react",
+    "animation",
+    "apple-tv",
+    "poster"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "react": "^18.3.1"
