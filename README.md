@@ -103,3 +103,20 @@ export const MyParallaxPoster = () => {
 This hook handles the interpolation of rotation values for your content and smooths animations when mousing in and out of your posters
 
 ![Parallax Poster Demo](media/parallax-poster.gif "Parallax Poster Demo")
+
+## Troubleshooting Vite Builds
+In Vite's [issues](https://github.com/vitejs/vite/issues) tab you'll find open and closed complaints of build errors reporting that a dependency's export cannot be found. After investigating this issue, it seems Vite can miss an export or two during its compilation/optimization of a module.
+
+If you run into this issue while using this library, add the following to your vite.config.ts:
+```typescript
+export default defineConfig({
+  // ...your config
+
+  // Add this 
+  optimizeDeps: {
+    exclude: ["@figliolia/apple-tv-poster"]
+  },
+});
+```
+
+The build error will subside.
