@@ -6,7 +6,7 @@ An easy to use Apple TV-like parallax poster for the Web and React.
 ## Installation
 ```bash
 npm i @figliolia/apple-tv-poster
-# 0r
+# or
 yarn add @figliolia/apple-tv-poster
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/apple-tv-poster",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Apple TV - like poster for the Web",
   "author": "Alex Figliolia",
   "scripts": {
