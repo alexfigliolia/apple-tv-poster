@@ -1,0 +1,29 @@
+.three-d-poster {
+  --scale: 1;
+  --shineX: 0px;
+  --shineY: 0px;
+  --shadowX: 0px;
+  --shadowY: 0px;
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  width: 100%;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 
+    calc(var(--shadowX) / 2) calc(var(--shadowY) / 2) calc(max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) / 2) rgba(0,0,0, 0.3), 
+    var(--shadowX) var(--shadowY) max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) rgba(0,0,0, 0.15);
+  position: relative;
+  transform-style: preserve-3d;
+  scale: var(--scale);
+  transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  &>.shine {
+    z-index: 2;
+    top: var(--shineY);
+    left: var(--shineX);
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: radial-gradient(rgba(255,255,255, 0.125), rgba(255,255,255, 0.075), rgba(255,255,255, 0.035), rgba(255,255,255, 0.001), transparent);
+  }
+}
