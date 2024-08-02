@@ -120,3 +120,6 @@ export default defineConfig({
 ```
 
 The build error will subside.
+
+### Browser Support
+This package relies on CSS custom properties in order to function. For more detailed information on specific browser version support, please reference the [Can I Use CSS Custom Properties](https://caniuse.com/?search=CSS%20custom%20properties) support tables.
