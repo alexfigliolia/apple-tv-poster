@@ -1,7 +1,8 @@
 import type { HTMLAttributes } from "react";
 import { memo, useLayoutEffect, useState } from "react";
+import { useClassNames } from "@figliolia/classnames";
 import { PosterController } from "Controllers";
-import { useClassNames, useController } from "Hooks";
+import { useController } from "Hooks";
 import type { OptionalChildren, RotationCallback } from "./types";
 import "./styles.css";
 
