@@ -1,4 +1,4 @@
-import type { MouseEvent } from "react";
+import type { MouseEvent, TouchEvent } from "react";
 import type { PosterAnimationFrame, RotationCallback } from "../types";
 import { BaseController } from "./BaseController";
 
@@ -17,20 +17,23 @@ export class PosterController<T extends Element> extends BaseController {
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
-  public get listeners() {
-    return {
-      ref: this.cacheNode,
-      onMouseMove: this.onMouseMove,
-      onMouseEnter: this.onMouseEnter,
-      onMouseLeave: this.onMouseLeave,
-    };
-  }
+  public readonly listeners = {
+    ref: this.cacheNode,
+    onTouchEnd: this.onMouseLeave,
+    onMouseMove: this.onMouseMove,
+    onTouchMove: this.onMouseMove,
+    onTouchStart: this.onMouseEnter,
+    onMouseEnter: this.onMouseEnter,
+    onMouseLeave: this.onMouseLeave,
+  };
 
   public cacheNode(node: T) {
     this.node = node;
   }
 
-  public onMouseEnter(e: MouseEvent<HTMLDivElement>) {
+  public onMouseEnter<
+    E extends MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
+  >(e: E) {
     this.active = true;
     this.clear();
     this.animate(state => ({ ...state, scale: 1.05, transition: "0.2s" }));
@@ -40,11 +43,19 @@ export class PosterController<T extends Element> extends BaseController {
     this.onMouseMove(e);
   }
 
-  public onMouseMove(e: MouseEvent<HTMLDivElement>) {
+  public onMouseMove<
+    E extends MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
+  >(e: E) {
     if (!this.active || !this.node) {
       return;
     }
-    const { clientX, clientY } = e;
+    let clientX: number;
+    let clientY: number;
+    if ("touches" in e) {
+      ({ clientX, clientY } = e.touches[0]);
+    } else {
+      ({ clientX, clientY } = e);
+    }
     const { top, left, width, height } = this.node.getBoundingClientRect();
     const X = clientX - left;
     const Y = clientY - top;
