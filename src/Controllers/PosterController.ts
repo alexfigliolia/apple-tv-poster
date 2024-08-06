@@ -11,29 +11,17 @@ export class PosterController<T extends Element> extends BaseController {
     super();
     this.animate = animate;
     this.onRotation = onRotation;
-    this.cacheNode = this.cacheNode.bind(this);
-    this.onMouseMove = this.onMouseMove.bind(this);
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
-  public readonly listeners = {
-    ref: this.cacheNode,
-    onTouchEnd: this.onMouseLeave,
-    onMouseMove: this.onMouseMove,
-    onTouchMove: this.onMouseMove,
-    onTouchStart: this.onMouseEnter,
-    onMouseEnter: this.onMouseEnter,
-    onMouseLeave: this.onMouseLeave,
+  public cacheNode = (node: T) => {
+    this.node = node;
   };
 
-  public cacheNode(node: T) {
-    this.node = node;
-  }
-
-  public onMouseEnter<
+  public onMouseEnter = <
     E extends MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
-  >(e: E) {
+  >(
+    e: E,
+  ) => {
     this.active = true;
     this.clear();
     this.animate(state => ({ ...state, scale: 1.05, transition: "0.2s" }));
@@ -41,11 +29,13 @@ export class PosterController<T extends Element> extends BaseController {
       this.animate(state => ({ ...state, transition: "0s" }));
     }, 200);
     this.onMouseMove(e);
-  }
+  };
 
-  public onMouseMove<
+  public onMouseMove = <
     E extends MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
-  >(e: E) {
+  >(
+    e: E,
+  ) => {
     if (!this.active || !this.node) {
       return;
     }
@@ -74,9 +64,9 @@ export class PosterController<T extends Element> extends BaseController {
       shadowY: (Y - midY) * 0.15,
     }));
     this.onRotation?.(rotateX, rotateY);
-  }
+  };
 
-  public onMouseLeave() {
+  public onMouseLeave = () => {
     this.clear();
     this.active = false;
     if (!this.node) {
@@ -97,5 +87,15 @@ export class PosterController<T extends Element> extends BaseController {
       transition: "0.5s",
     });
     this.onRotation?.(0, 0);
-  }
+  };
+
+  public readonly listeners = {
+    ref: this.cacheNode,
+    onTouchEnd: this.onMouseLeave,
+    onMouseMove: this.onMouseMove,
+    onTouchMove: this.onMouseMove,
+    onTouchStart: this.onMouseEnter,
+    onMouseEnter: this.onMouseEnter,
+    onMouseLeave: this.onMouseLeave,
+  };
 }
