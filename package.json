@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/apple-tv-poster",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An Apple TV - like poster for the Web",
   "author": "Alex Figliolia",
   "scripts": {
@@ -30,6 +30,9 @@
     "apple-tv",
     "poster"
   ],
+  "dependencies": {
+    "@figliolia/classnames": "^1.0.1"
+  },
   "peerDependencies": {
     "@figliolia/classnames": "^1.0.1",
     "react": "^18.3.1"
