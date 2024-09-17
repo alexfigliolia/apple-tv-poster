@@ -1,11 +1,7 @@
 # Apple TV Poster
 An easy to use Apple TV-like parallax poster for the Web and React.
 
-
-https://github.com/user-attachments/assets/29d1cae0-26e4-412d-ab08-47a8fac0e2ca
-
-
-![Poster Demo](media/posters.gif "Poster Demo")
+<video title="Demo" src="https://github.com/user-attachments/assets/29d1cae0-26e4-412d-ab08-47a8fac0e2ca" height="auto" width="auto"></video>
 
 ## Installation
 ```bash
