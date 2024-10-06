@@ -10,8 +10,8 @@
   border-radius: 0.5em;
   overflow: hidden;
   box-shadow: 
-    calc(var(--shadowX) / 2) calc(var(--shadowY) / 2) calc(max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) / 2) rgba(0,0,0, 0.3), 
-    var(--shadowX) var(--shadowY) max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) rgba(0,0,0, 0.15);
+    calc(var(--shadowX) / 2) calc(var(--shadowY) / 2) calc(max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) / 2) rgba(#000, 0.3), 
+    var(--shadowX) var(--shadowY) max(var(--shadowX), -1 * var(--shadowX), var(--shadowY), -1 * var(--shadowY)) rgba(#000, 0.15);
   position: relative;
   transform-style: preserve-3d;
   scale: var(--scale);

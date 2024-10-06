@@ -4,7 +4,7 @@ import { useClassNames } from "@figliolia/classnames";
 import { PosterController } from "Controllers";
 import { useController } from "Hooks";
 import type { OptionalChildren, RotationCallback } from "./types";
-import "./styles.css";
+import "./styles.scss";
 
 export const Poster = memo(function Poster({
   style,
