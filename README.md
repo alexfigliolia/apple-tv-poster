@@ -101,4 +101,4 @@ export const MyParallaxPoster = () => {
 This hook handles the interpolation of rotation values for your content and smooths animations when mousing in and out of your posters
 
 ### Browser Support
-This package relies on CSS variables in order to function. For more detailed information on specific browser version support, please reference the [Can I Use CSS Variables](https://caniuse.com/?search=CSS%20variables) support tables.
+This package relies on CSS Custom Properties in order to function. For more detailed information on specific browser version support, please reference the [Can I Use CSS Custom Properties](https://caniuse.com/?search=CSS%20custom%20properties) support tables.
